@@ -1,3 +1,5 @@
+// Header file for the arm joints
+
 #ifndef Arm_Joints_h
 #define Arm_Joints_h
 

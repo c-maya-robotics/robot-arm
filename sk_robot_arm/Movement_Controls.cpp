@@ -1,5 +1,8 @@
+// Functions for the movement controls
+
 #include "Movement_Controls.h"
 
+//Initialise button object
 Button::Button(byte buttonPin, byte debounceTime, unsigned long holdTime)
 {
   _buttonPin = buttonPin;
@@ -9,6 +12,12 @@ Button::Button(byte buttonPin, byte debounceTime, unsigned long holdTime)
   pinMode(_buttonPin, INPUT);
 }
 
+// Return a reading value
+//  IDLE_STATE        There is no high reading from the button pin
+//  SINGLE_PRESSED    The button has been pressed
+//  SINGLE_RELEASED   The button is no longer being pressed
+//  HELD_PRESSED      The button is being held down
+//  HELD_RELEASED     The button is no longer being held down
 byte Button::getReading()
 {
   unsigned long currentMillis = millis();
@@ -62,6 +71,7 @@ Dial::Dial(byte dialPin)
   _dialPin = dialPin;
 }
 
+// Return a reading from the potentiometer
 int Dial::getReading()
 {
   int reading = analogRead(_dialPin);

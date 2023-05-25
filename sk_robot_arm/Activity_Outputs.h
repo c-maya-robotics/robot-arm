@@ -1,3 +1,5 @@
+// Header file for the indicator outputs
+
 #ifndef Activity_Outputs_h
 #define Activity_Outputs_h
 

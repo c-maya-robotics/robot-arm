@@ -1,3 +1,5 @@
+// Header file for the movement controls
+
 #ifndef Movement_Controls_h
 #define Movement_Controls_h
 

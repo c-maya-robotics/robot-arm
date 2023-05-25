@@ -1,5 +1,8 @@
+// Functions for the arm joint movement
+
 #include "Arm_Joints.h"
 
+//Initialise joint object
 Joint::Joint(byte servoPin, byte initialAngle, byte lowerBoundary, byte upperBoundary)
 {
   s.attach(servoPin);
@@ -12,6 +15,9 @@ Joint::Joint(byte servoPin, byte initialAngle, byte lowerBoundary, byte upperBou
   _lowerBoundary = lowerBoundary;
 }
 
+// Rotate the servo
+//  moveDirection   The direction the servo should move in, left or right
+//  angleChange     The size of the steps it should make in one move interval
 void Joint::intervalMove(byte moveDirection, byte angleChange)
 {
   if (moveDirection == LEFT)
@@ -27,6 +33,7 @@ void Joint::intervalMove(byte moveDirection, byte angleChange)
   s.write(currentAngle);
 }
 
+// Return the servo to its initial position
 void Joint::setInitialState()
 {
   currentAngle = _initialAngle;
